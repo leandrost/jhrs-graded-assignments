@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <th>image</th>
+    <th>title</th>
+    <th>social rank</th>
+  </thead>
+  <tbody>
+    <% @recipes.each do |recipe| %>
+    <tr>
+      <td>
+        <%= link_to recipe["source_url"] do %>
+          <%= image_tag(recipe["image_url"], size: "100x100") %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to recipe["source_url"] do %>
+          <%= sanitize recipe["title"] %>
+        <% end %>
+      </td>
+      <td><%= recipe["social_rank"] %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
