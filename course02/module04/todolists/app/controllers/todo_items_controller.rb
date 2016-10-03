@@ -25,7 +25,7 @@ class TodoItemsController < ApplicationController
   # POST /todo_items
   # POST /todo_items.json
   def create
-    @todo_item = TodoItem.new(todo_item_params)
+    @todo_item = @todo_list.todo_items.new(todo_item_params)
 
     respond_to do |format|
       if @todo_item.save
